@@ -1,105 +1,99 @@
 # Call Scoreboard
 
-Ty Pham’s **options social accountability board**: cite → mark → hit-rate, with **peak% vs expiry%** kept as separate scores (RULES.md v1).
+Ty Pham’s **options social accountability board**: cite → mark → hit-rate, with **peak% vs expiry%** kept separate (RULES.md v1.1).
 
 Social callouts are evidence to interrogate, never a copy signal. This stack does **not** CLEAR trades or auto-trade. Scripts never invent quotes.
+
+**Authoritative runbooks:** [`CONTINUE_HERE.md`](CONTINUE_HERE.md) · [`RULES.md`](RULES.md)
 
 ## Pipeline
 
 | Role | Job | Output |
 |------|-----|--------|
-| **Cite Scout** | Harvest dated X/Reddit options plays | `cites.json` |
+| **Cite Scout** | Multi-lane hunt (not likes-first) → dated options plays | `cites.json`, `handles.json` |
 | **Mark Desk** | Stamp ask near cite; track peak / now / exit / expiry | `marks.json` |
-| **Hit Rate** | Overall + per-handle hit rate, streaks | `scoreboard.json`, `scoreboard.md` |
+| **Hit Rate** | Overall + per-handle rates, avg peak/exp %, follow shortlist | `scoreboard.json`, `scoreboard.md` |
 
-Phone board: `dashboard/index.html` (peak ≠ expiry front and center).
+Phone board: [`dashboard/index.html`](dashboard/index.html) — Follow shortlist + Leaders show avg peak%, avg exp%, followers, experience. Peak ≠ expiry front and center.
 
-## RULES.md v1 (peak vs expiry)
+## Decision docs (phone-first)
+
+| Doc | Purpose |
+|-----|---------|
+| [`DISCOVERY.md`](DISCOVERY.md) | Multi-lane hunt (A–F): hot-handle deepen, runner→who-called-it, ticker search, network, alt platforms, anti-lanes. Likes/views = weak tie-break only. |
+| [`DIGEST.md`](DIGEST.md) | Weekday 7:51am ET morning DM format — follow_shortlist + avg peak/exp. |
+| [`handles.json`](handles.json) | Dossier schema: `followers` + `experience_tier` (+ why). Vanity ≠ edge. |
+| [`CONTINUE_HERE.md`](CONTINUE_HERE.md) | Live CoS state / standing orders (resume without Ty). |
+| [`RULES.md`](RULES.md) | v1.1 scoring: entry basis, peak sources, pending/short-premium buckets, streaks. |
+
+## RULES.md v1.1 (peak vs expiry)
 
 A callout can **peak +50%** and still **expire worthless**. Headline wins use the peak path; hold-to-expiry is a separate column.
 
-- **peak_ask / peak_pct** — max ask while alive (max-gain map)
+- **peak_ask / peak_pct** — max ask while alive (labeled `peak_source` / `peak_feed`)
 - **expiry_ask / expiry_pct** — at/near expiration; 0 if OTM worthless
-- **exit_ask / exit_pct** — poster-stated STC only; else null
-- **win_50 / win_2x / win_3x** — peak-based
+- **win_50 / win_2x / win_3x** — peak-based (clean LONG only)
 - **hold_expiry_win** — expiry_pct ≥ +50%
 - **early_vs_expiry** — peak ≥ +50% and expiry ≤ 0
-- Headline **overall hit rate** = peak win_50 / marked cites with valid first_ask
-- Exclude `hindsight_flag=true` from headline n (contaminated bucket)
-- Streaks: consecutive peak win_50 by `cited_et`; unmarked breaks the streak
+- Buckets out of headline: hindsight, short-premium (CSP/CC), pending young cites, no cite-time path
+- Hit Rate also publishes **avg_peak_pct**, **avg_expiry_pct**, and **follow_shortlist** labels (`peak_printer` / `hold_candidate` / `thin_sample` / `avoid`)
 
-Full definitions: [`RULES.md`](RULES.md) (keep v1 intact; log changes there).
-
-## Data files
-
-| File | Role |
-|------|------|
-| `cites.json` | Cite Scout rows (`handle`, `platform`, `post_url`, `cited_et`, contract fields, `cite_ask`, `claim_quote`, `hindsight_flag`) |
-| `marks.json` | Mark Desk rows joined by `cite_id` (peak / now / exit / expiry, status, win flags) |
-| `scoreboard.json` | Machine hit-rate + streaks |
-| `scoreboard.md` | Human report |
-| `dashboard/scoreboard.json` | Snapshot for the static phone board (refresh from root scoreboard when serving) |
-
-Do not wipe or invent marks. Prefer Webull live when available; until then `public` (yfinance) is labeled on each mark.
+Never crown n&lt;10. Full definitions: [`RULES.md`](RULES.md).
 
 ## How to run
 
-Python 3.10+. For live/public marks: `pip install yfinance`.
+Python 3.10+. For public marks: `pip install yfinance`.
 
 ```bash
 # From repo root
 
-# 1) Parse free-text callouts (Cite Scout helper)
+# 1) Parse free-text callouts
 python3 src/parse_contract.py 'SPY 780C 10/10'
 python3 src/parse_contract.py 'AAPL $500C for 9/12' --json
-python3 src/parse_contract.py --json <<< '$TSLA 420 calls Oct 23'
 
-# 2) Mark cites (yfinance public chain; feed=public)
+# 2) Mark cites (feed labeled; prefer Webull live when healthy)
 python3 src/mark_cites.py
-# Recompute win flags without re-quoting:
-python3 src/mark_cites.py --no-refresh
+python3 src/mark_cites.py --no-refresh   # recompute flags without re-quoting
 
-# 3) Hit rate + streaks → scoreboard.json + scoreboard.md
+# 3) History overlay (cite-time entry + 5-session peak) then hit rate
+python3 src/history_peak.py
 python3 src/hit_rate.py
 
-# 4) Phone board (fetch needs a static server — open dashboard/)
+# 4) QC (optional)
+python3 src/qc/run_qc.py
+
+# 5) Phone board
 python3 -m http.server 8765 --directory .
 # → http://127.0.0.1:8765/dashboard/
-# Share → Add to Home Screen on phone
 ```
-
-Optional paths: `mark_cites.py --cites PATH --marks PATH`; `hit_rate.py --marks PATH --cites PATH --out PATH --md PATH`.
 
 ## Layout
 
 ```
 .
+  CONTINUE_HERE.md      # CoS resume / standing orders
+  RULES.md              # v1.1 scoring (authoritative)
+  DISCOVERY.md          # multi-lane Cite Scout algorithm
+  DIGEST.md             # weekday morning DM format
+  handles.json          # followers + experience_tier dossier
   cites.json            # Cite Scout
   marks.json            # Mark Desk
-  scoreboard.json       # Hit Rate (machine)
-  scoreboard.md         # Hit Rate (human)
-  RULES.md              # v1 peak / expiry / streaks
-  github-candidates.md  # related OSS notes
+  scoreboard.json       # Hit Rate (+ follow_shortlist)
+  scoreboard.md
   src/
     parse_contract.py
     mark_cites.py
+    history_peak.py
     hit_rate.py
+    qc/run_qc.py
   dashboard/
-    index.html          # mobile-first board
-    scoreboard.json     # board data snapshot
-  vendor/               # shallow reference clones (licenses preserved)
+    index.html          # mobile-first phone board
+    scoreboard.json
+  vendor/               # shallow reference clones
 ```
-
-## Vendored reference (`vendor/`)
-
-| Repo | License | Borrowed |
-|------|---------|----------|
-| [AdoNunes/DiscordAlertsTrader](https://github.com/AdoNunes/DiscordAlertsTrader) | BSD-3-Clause | Cite→live mark→rollup / max_pnl-style peak % (not Discord scrape or order placement) |
-| [austinpkugler/trendfin](https://github.com/austinpkugler/trendfin) | MIT | Free-text contract regex ideas → `src/parse_contract.py` |
-| [LuxAlgo/trade-journal](https://github.com/LuxAlgo/trade-journal) | MIT | Win-rate / streak math; KPI layout inspiration for the phone board |
 
 ## Caveats
 
-- Peak while alive needs recurring marks; already-expired cites may show peak_pct ≈ expiry_pct until historical option OHLC is wired.
-- Exit asks only from explicit STC/closed/trimmed language — bare “Sold N contracts” is STO entry, not exit.
+- Peak while alive needs recurring marks; hist overlay labels yahoo highs vs CBOE asks.
+- Exit asks only from explicit STC/closed/trimmed language.
 - Social ≠ signal. No auto-trade. Never invent quotes.
