@@ -1,1 +1,1 @@
-"""Call Scoreboard: parse cites, mark outcomes, compute hit rates."""
+# Call Scoreboard — options social accountability (no auto-trade)
