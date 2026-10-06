@@ -23,7 +23,7 @@
 - **Not likes-first.** Multi-lane every pass (≥3): A hot-handle deepen · B runner→who-called-it (pre-move only) · C ticker/keyword · D network expand · E alt platforms · F anti-lanes (CSP/flow park).
 - Likes/views = weak tie-break only after contemporaneous FP + liquid + lottery band.
 - Cite Scout logs which lanes ran; CoS/QC stress-test yield each bump; `algo_note` line here when we change weights.
-- **algo_note:** 2026-10-06 16:26 decision metrics ship — avg_peak_pct/avg_expiry_pct on leaderboard+hot_streaks; `follow_shortlist` labels; `handles.json` schema (followers+experience_tier) merged (stubs unknown until Cite Scout skim). Phone Follow shortlist + Leaders show avgs. Next: Cite Scout fill followers/xp on Lane A harvest; do not block marks on dossier.
+- **algo_note:** 2026-10-06 20:45 handle stories ship — per-handle `horizon` (short≤14 / mid 15–90 / long>90 / mixed if no bucket ≥60%); `past` / `current` / `potential` / `cos_eval` (follow|watch|skip). Phone Follow shortlist + Leaders + DIGEST show them. Peak ≠ expiry. Not trade advice.
 
 ## Live state (2026-10-06 16:13 ET)
 - Path: `/workspace/call-scoreboard/`

@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "rules_ref": "RULES.md v1.1",
   "updated_et": "2026-10-06 16:26",
   "disclaimer": "Accountability only \u2014 social \u2260 trade signal. Peak \u2260 expiry. No CLEAR tickets. Hindsight excluded from headline.",
@@ -734,7 +734,20 @@
       "followers": 1325,
       "followers_as_of_et": "2026-10-06 16:26",
       "experience_tier": "mixed",
-      "experience_why": "Consistent Opened/Closed alerts with expiry+fill; some implausible sizes + Telegram brag."
+      "experience_why": "Consistent Opened/Closed alerts with expiry+fill; some implausible sizes + Telegram brag.",
+      "horizon": "short",
+      "horizon_n": 4,
+      "horizon_mix": {
+        "short": 4,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 0,
+      "past": "scored n=8 \u00b7 expired 4 \u00b7 peak win_50 100% \u00b7 avg peak +365% \u00b7 avg exp +2% \u00b7 early\u2260exp 3",
+      "current": "no LIVE marks",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 expiry path more durable than pure peak printers \u00b7 if watched: compare hold-to-expiry vs peak separately \u00b7 Consistent Opened/Closed alerts with expiry+fill; some implausible sizes + Telegram brag. \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "follow",
+      "cos_why": "hold_candidate \u00b7 short \u00b7 n=8 \u2014 thicken before crowning; peak\u2260expiry still shown"
     },
     {
       "handle": "@liquidittyedge",
@@ -772,7 +785,20 @@
       "followers": 665,
       "followers_as_of_et": "2026-10-06 16:26",
       "experience_tier": "mixed",
-      "experience_why": "Dated entries + trim/close links; also hype recaps and Discord promo."
+      "experience_why": "Dated entries + trim/close links; also hype recaps and Discord promo.",
+      "horizon": "mid",
+      "horizon_n": 3,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 2,
+        "long": 0
+      },
+      "median_dte": 22,
+      "past": "scored n=7 \u00b7 expired 2 \u00b7 peak win_50 100% \u00b7 avg peak +209% \u00b7 avg exp -40% \u00b7 early\u2260exp 1",
+      "current": "1 LIVE \u00b7 avg now -23% \u00b7 peak so far +70%",
+      "potential": "mid-horizon (15\u201390 DTE) book \u00b7 peak\u2260hold pattern \u2014 early peaks, weak expiry path \u00b7 if watched: track peak prints, not hold-to-expiry \u00b7 Dated entries + trim/close links; also hype recaps and Discord promo. \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "follow",
+      "cos_why": "peak_printer \u00b7 mid \u00b7 n=7 \u2014 watch peak path; do not treat expiry as the score"
     },
     {
       "handle": "@HendersonAnalytic",
@@ -810,7 +836,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "No X account (doesn't exist). Book cites are Stocktwits \u2014 need ST followers skim."
+      "experience_why": "No X account (doesn't exist). Book cites are Stocktwits \u2014 need ST followers skim.",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 1,
+      "past": "scored n=2 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +143% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +204% \u00b7 peak so far +232%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 No X account (doesn't exist). Book cites are Stocktwits \u2014 need ST followers skim. \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=2 \u00b7 short \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@A_Pevine",
@@ -848,7 +887,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 7,
+      "past": "scored n=2 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +99% \u00b7 avg exp -98% \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +1% \u00b7 peak so far +117%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 peak\u2260hold pattern \u2014 early peaks, weak expiry path \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=2 \u00b7 short \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@AscendOptions",
@@ -886,7 +938,20 @@
       "followers": 546,
       "followers_as_of_et": "2026-10-06 16:26",
       "experience_tier": "mixed",
-      "experience_why": "Alerts with strike/expiry/fill + 30% stop; mostly 0DTE gambles, thin thesis."
+      "experience_why": "Alerts with strike/expiry/fill + 30% stop; mostly 0DTE gambles, thin thesis.",
+      "horizon": "short",
+      "horizon_n": 2,
+      "horizon_mix": {
+        "short": 2,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 2,
+      "past": "scored n=2 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +99% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "2 LIVE \u00b7 avg now -7% \u00b7 peak so far +99%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 Alerts with strike/expiry/fill + 30% stop; mostly 0DTE gambles, thin thesis. \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=2 \u00b7 short \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@kimsingsong003",
@@ -924,7 +989,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +50% \u00b7 avg exp -100% \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 peak\u2260hold pattern \u2014 early peaks, weak expiry path \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@petesully18",
@@ -962,7 +1040,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +90% \u00b7 avg exp -100% \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 peak\u2260hold pattern \u2014 early peaks, weak expiry path \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@imnotharsh",
@@ -1000,7 +1091,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +62% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@DudeOnR0ck",
@@ -1038,7 +1142,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 10,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +103% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +2% \u00b7 peak so far +103%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 short \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@RSInvestments1",
@@ -1076,7 +1193,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 3,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +106% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now -46% \u00b7 peak so far +106%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 short \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@redshiftbishop",
@@ -1114,7 +1244,20 @@
       "followers": 1215,
       "followers_as_of_et": "2026-10-06 16:26",
       "experience_tier": "amateur",
-      "experience_why": "Mostly allocation/BTC-treasury/gloat/sports; few specific options entries."
+      "experience_why": "Mostly allocation/BTC-treasury/gloat/sports; few specific options entries.",
+      "horizon": "long",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 1
+      },
+      "median_dte": 171,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +92% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now -48% \u00b7 peak so far +92%",
+      "potential": "longer-dated (>90 DTE) book \u00b7 Mostly allocation/BTC-treasury/gloat/sports; few specific options entries. \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 long \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@BullTradeFinder",
@@ -1152,7 +1295,20 @@
       "followers": 123300,
       "followers_as_of_et": "2026-10-06 16:26",
       "experience_tier": "experienced",
-      "experience_why": "Educator/vendor chart levels + CSPs; heavily commercial (copy trade, win-rate claims)."
+      "experience_why": "Educator/vendor chart levels + CSPs; heavily commercial (copy trade, win-rate claims).",
+      "horizon": "mid",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 1,
+        "long": 0
+      },
+      "median_dte": 59,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +1215% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +936% \u00b7 peak so far +1215%",
+      "potential": "mid-horizon (15\u201390 DTE) book \u00b7 Educator/vendor chart levels + CSPs; heavily commercial (copy trade, win-rate claims). \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mid \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@gabimarutrades",
@@ -1190,7 +1346,20 @@
       "followers": 457,
       "followers_as_of_et": "2026-10-06 16:26",
       "experience_tier": "amateur",
-      "experience_why": "YOLO tone, random calls, implausible size claims; no structured entries/exits."
+      "experience_why": "YOLO tone, random calls, implausible size claims; no structured entries/exits.",
+      "horizon": "mid",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 1,
+        "long": 0
+      },
+      "median_dte": 16,
+      "past": "scored n=4 \u00b7 expired 0 \u00b7 peak win_50 75% \u00b7 avg peak +106% \u00b7 avg exp -98% \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now -48% \u00b7 peak so far +69%",
+      "potential": "mid-horizon (15\u201390 DTE) book \u00b7 peak\u2260hold pattern \u2014 early peaks, weak expiry path \u00b7 if watched: track peak prints, not hold-to-expiry \u00b7 YOLO tone, random calls, implausible size claims; no structured entries/exits. \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "follow",
+      "cos_why": "peak_printer \u00b7 mid \u00b7 n=4 \u2014 watch peak path; do not treat expiry as the score"
     },
     {
       "handle": "@_TP888",
@@ -1228,7 +1397,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 2,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 1,
+        "long": 0
+      },
+      "median_dte": 16,
+      "past": "scored n=3 \u00b7 expired 0 \u00b7 peak win_50 67% \u00b7 avg peak +84% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "2 LIVE \u00b7 avg now +82% \u00b7 peak so far +126%",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 if watched: track peak prints, not hold-to-expiry \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "follow",
+      "cos_why": "peak_printer \u00b7 mixed \u00b7 n=3 \u2014 watch peak path; do not treat expiry as the score"
     },
     {
       "handle": "@Bhaskinator",
@@ -1266,7 +1448,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mid",
+      "horizon_n": 27,
+      "horizon_mix": {
+        "short": 3,
+        "mid": 22,
+        "long": 2
+      },
+      "median_dte": 42,
+      "past": "scored n=3 \u00b7 expired 3 \u00b7 peak win_50 33% \u00b7 avg peak +235% \u00b7 avg exp -100% \u00b7 early\u2260exp 1",
+      "current": "24 LIVE \u00b7 avg now -42% \u00b7 peak so far +39%",
+      "potential": "mid-horizon (15\u201390 DTE) book \u00b7 peak\u2260hold pattern \u2014 early peaks, weak expiry path \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=3 \u00b7 mid \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@fidget_flow",
@@ -1304,7 +1499,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mid",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 1,
+        "long": 0
+      },
+      "median_dte": 51,
+      "past": "scored n=7 \u00b7 expired 0 \u00b7 peak win_50 14% \u00b7 avg peak +13% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +61% \u00b7 peak so far +66%",
+      "potential": "mid-horizon (15\u201390 DTE) book \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "skip",
+      "cos_why": "win_50 lags book on n=7 \u2014 deprioritize harvest (accountability fade, not a trade call)"
     },
     {
       "handle": "@optionwhalesio",
@@ -1342,7 +1550,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mid",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 1,
+        "long": 0
+      },
+      "median_dte": 52,
+      "past": "scored n=9 \u00b7 expired 0 \u00b7 peak win_50 11% \u00b7 avg peak +24% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now -6% \u00b7 peak so far +84%",
+      "potential": "mid-horizon (15\u201390 DTE) book \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "skip",
+      "cos_why": "win_50 lags book on n=9 \u2014 deprioritize harvest (accountability fade, not a trade call)"
     },
     {
       "handle": "@TheThetaDawg",
@@ -1380,7 +1601,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=2 \u00b7 expired 0 \u00b7 peak win_50 0% \u00b7 avg peak +27% \u00b7 avg exp -100% \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=2 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@prosperityjoe78",
@@ -1418,7 +1652,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 0% \u00b7 avg peak +6% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@teamjayday",
@@ -1456,7 +1703,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mid",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 1,
+        "long": 0
+      },
+      "median_dte": 15,
+      "past": "scored n=1 \u00b7 expired 1 \u00b7 peak win_50 0% \u00b7 avg peak +5% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mid-horizon (15\u201390 DTE) book \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mid \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@Trader101Jp",
@@ -1494,7 +1754,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 0% \u00b7 avg peak +0% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@bintzan9a",
@@ -1532,7 +1805,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 0% \u00b7 avg peak +31% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@wvdwtrading",
@@ -1570,7 +1856,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 0% \u00b7 avg peak +31% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@TradingChick25",
@@ -1608,7 +1907,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 0% \u00b7 avg peak +9% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@TradeTactician1",
@@ -1646,7 +1958,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=0 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@robot2trade1",
@@ -1684,7 +2009,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=0 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@Gary_Sethi",
@@ -1722,7 +2060,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=0 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@Trade_Intel_",
@@ -1760,7 +2111,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=0 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@ippon_macro",
@@ -1798,7 +2162,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=0 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "u/Feisty_Level_1412",
@@ -1836,7 +2213,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=0 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "u/Glum-Illustrator-841",
@@ -1874,7 +2264,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=0 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@DallasAnalytics",
@@ -1912,7 +2315,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=0 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@ElmagoMagico",
@@ -1950,7 +2366,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=0 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@MrMoonTrain",
@@ -1988,7 +2417,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=0 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@rockypepino",
@@ -2023,7 +2465,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 13,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +27% \u00b7 peak so far +27%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "skip",
+      "cos_why": "hindsight / contaminated only \u2014 out of headline"
     },
     {
       "handle": "@aampatriot1",
@@ -2058,7 +2513,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 0,
+      "past": "scored n=0 \u00b7 expired 1 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 1",
+      "current": "no LIVE marks",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "skip",
+      "cos_why": "hindsight / contaminated only \u2014 out of headline"
     },
     {
       "handle": "@TeddyAfro",
@@ -2093,7 +2561,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 7,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +0% \u00b7 peak so far +185%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "skip",
+      "cos_why": "hindsight / contaminated only \u2014 out of headline"
     },
     {
       "handle": "@PrimeBlockXX5",
@@ -2128,7 +2609,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 1,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now -18% \u00b7 peak so far +117%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "skip",
+      "cos_why": "hindsight / contaminated only \u2014 out of headline"
     },
     {
       "handle": "@snipetrades",
@@ -2163,7 +2657,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 3,
+      "past": "scored n=0 \u00b7 expired 0 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now -46% \u00b7 peak so far +64%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "skip",
+      "cos_why": "hindsight / contaminated only \u2014 out of headline"
     },
     {
       "handle": "@WallStreetFlows",
@@ -2198,7 +2705,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 2,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 1,
+        "long": 0
+      },
+      "median_dte": 12,
+      "past": "scored n=0 \u00b7 expired 2 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 2",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "skip",
+      "cos_why": "hindsight / contaminated only \u2014 out of headline"
     },
     {
       "handle": "@360_trader",
@@ -2233,7 +2753,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 7,
+      "past": "scored n=0 \u00b7 expired 1 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "skip",
+      "cos_why": "hindsight / contaminated only \u2014 out of headline"
     },
     {
       "handle": "@epictrades1",
@@ -2268,7 +2801,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mid",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 1,
+        "long": 0
+      },
+      "median_dte": 16,
+      "past": "scored n=0 \u00b7 expired 1 \u00b7 peak win_50 n/a \u00b7 avg peak \u2014 \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mid-horizon (15\u201390 DTE) book \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "skip",
+      "cos_why": "hindsight / contaminated only \u2014 out of headline"
     }
   ],
   "live_board": [
@@ -3134,7 +3680,11 @@
       "experience_tier": "mixed",
       "experience_why": "Consistent Opened/Closed alerts with expiry+fill; some implausible sizes + Telegram brag.",
       "scope": "handle",
-      "why": "@edgeflowcapital \u00b7 x on a 8W peak streak (scored rows only \u00b7 peak \u2260 hold)"
+      "why": "@edgeflowcapital \u00b7 x on a 8W peak streak (scored rows only \u00b7 peak \u2260 hold)",
+      "horizon": "short",
+      "cos_eval": "follow",
+      "past": "scored n=8 \u00b7 expired 4 \u00b7 peak win_50 100% \u00b7 avg peak +365% \u00b7 avg exp +2% \u00b7 early\u2260exp 3",
+      "current": "no LIVE marks"
     },
     {
       "handle": "@liquidittyedge",
@@ -3154,7 +3704,11 @@
       "experience_tier": "mixed",
       "experience_why": "Dated entries + trim/close links; also hype recaps and Discord promo.",
       "scope": "handle",
-      "why": "@liquidittyedge \u00b7 x on a 7W peak streak (scored rows only \u00b7 peak \u2260 hold)"
+      "why": "@liquidittyedge \u00b7 x on a 7W peak streak (scored rows only \u00b7 peak \u2260 hold)",
+      "horizon": "mid",
+      "cos_eval": "follow",
+      "past": "scored n=7 \u00b7 expired 2 \u00b7 peak win_50 100% \u00b7 avg peak +209% \u00b7 avg exp -40% \u00b7 early\u2260exp 1",
+      "current": "1 LIVE \u00b7 avg now -23% \u00b7 peak so far +70%"
     },
     {
       "handle": "@HendersonAnalytic",
@@ -3174,7 +3728,11 @@
       "experience_tier": "unknown",
       "experience_why": "No X account (doesn't exist). Book cites are Stocktwits \u2014 need ST followers skim.",
       "scope": "handle",
-      "why": "@HendersonAnalytic \u00b7 stocktwits on a 2W peak streak (scored rows only \u00b7 peak \u2260 hold)"
+      "why": "@HendersonAnalytic \u00b7 stocktwits on a 2W peak streak (scored rows only \u00b7 peak \u2260 hold)",
+      "horizon": "short",
+      "cos_eval": "watch",
+      "past": "scored n=2 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +143% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +204% \u00b7 peak so far +232%"
     },
     {
       "handle": "@A_Pevine",
@@ -3194,7 +3752,11 @@
       "experience_tier": "unknown",
       "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
       "scope": "handle",
-      "why": "@A_Pevine \u00b7 x on a 2W peak streak (scored rows only \u00b7 peak \u2260 hold)"
+      "why": "@A_Pevine \u00b7 x on a 2W peak streak (scored rows only \u00b7 peak \u2260 hold)",
+      "horizon": "short",
+      "cos_eval": "watch",
+      "past": "scored n=2 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +99% \u00b7 avg exp -98% \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +1% \u00b7 peak so far +117%"
     },
     {
       "handle": "@AscendOptions",
@@ -3214,7 +3776,11 @@
       "experience_tier": "mixed",
       "experience_why": "Alerts with strike/expiry/fill + 30% stop; mostly 0DTE gambles, thin thesis.",
       "scope": "handle",
-      "why": "@AscendOptions \u00b7 x on a 2W peak streak (scored rows only \u00b7 peak \u2260 hold)"
+      "why": "@AscendOptions \u00b7 x on a 2W peak streak (scored rows only \u00b7 peak \u2260 hold)",
+      "horizon": "short",
+      "cos_eval": "watch",
+      "past": "scored n=2 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +99% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "2 LIVE \u00b7 avg now -7% \u00b7 peak so far +99%"
     },
     {
       "handle": "@gabimarutrades",
@@ -3234,7 +3800,11 @@
       "experience_tier": "amateur",
       "experience_why": "YOLO tone, random calls, implausible size claims; no structured entries/exits.",
       "scope": "handle_rate",
-      "why": "@gabimarutrades \u00b7 x hot rate 75% on n=4 (scored rows only \u00b7 peak \u2260 hold)"
+      "why": "@gabimarutrades \u00b7 x hot rate 75% on n=4 (scored rows only \u00b7 peak \u2260 hold)",
+      "horizon": "mid",
+      "cos_eval": "follow",
+      "past": "scored n=4 \u00b7 expired 0 \u00b7 peak win_50 75% \u00b7 avg peak +106% \u00b7 avg exp -98% \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now -48% \u00b7 peak so far +69%"
     },
     {
       "handle": "@_TP888",
@@ -3254,7 +3824,11 @@
       "experience_tier": "unknown",
       "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
       "scope": "handle_rate",
-      "why": "@_TP888 \u00b7 x hot rate 67% on n=3 (scored rows only \u00b7 peak \u2260 hold)"
+      "why": "@_TP888 \u00b7 x hot rate 67% on n=3 (scored rows only \u00b7 peak \u2260 hold)",
+      "horizon": "mixed",
+      "cos_eval": "follow",
+      "past": "scored n=3 \u00b7 expired 0 \u00b7 peak win_50 67% \u00b7 avg peak +84% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "2 LIVE \u00b7 avg now +82% \u00b7 peak so far +126%"
     }
   ],
   "follow_shortlist": [
@@ -3275,7 +3849,20 @@
       "followers": 1325,
       "followers_as_of_et": "2026-10-06 16:26",
       "experience_tier": "mixed",
-      "experience_why": "Consistent Opened/Closed alerts with expiry+fill; some implausible sizes + Telegram brag."
+      "experience_why": "Consistent Opened/Closed alerts with expiry+fill; some implausible sizes + Telegram brag.",
+      "horizon": "short",
+      "horizon_n": 4,
+      "horizon_mix": {
+        "short": 4,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 0,
+      "past": "scored n=8 \u00b7 expired 4 \u00b7 peak win_50 100% \u00b7 avg peak +365% \u00b7 avg exp +2% \u00b7 early\u2260exp 3",
+      "current": "no LIVE marks",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 expiry path more durable than pure peak printers \u00b7 if watched: compare hold-to-expiry vs peak separately \u00b7 Consistent Opened/Closed alerts with expiry+fill; some implausible sizes + Telegram brag. \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "follow",
+      "cos_why": "hold_candidate \u00b7 short \u00b7 n=8 \u2014 thicken before crowning; peak\u2260expiry still shown"
     },
     {
       "handle": "@liquidittyedge",
@@ -3294,7 +3881,20 @@
       "followers": 665,
       "followers_as_of_et": "2026-10-06 16:26",
       "experience_tier": "mixed",
-      "experience_why": "Dated entries + trim/close links; also hype recaps and Discord promo."
+      "experience_why": "Dated entries + trim/close links; also hype recaps and Discord promo.",
+      "horizon": "mid",
+      "horizon_n": 3,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 2,
+        "long": 0
+      },
+      "median_dte": 22,
+      "past": "scored n=7 \u00b7 expired 2 \u00b7 peak win_50 100% \u00b7 avg peak +209% \u00b7 avg exp -40% \u00b7 early\u2260exp 1",
+      "current": "1 LIVE \u00b7 avg now -23% \u00b7 peak so far +70%",
+      "potential": "mid-horizon (15\u201390 DTE) book \u00b7 peak\u2260hold pattern \u2014 early peaks, weak expiry path \u00b7 if watched: track peak prints, not hold-to-expiry \u00b7 Dated entries + trim/close links; also hype recaps and Discord promo. \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "follow",
+      "cos_why": "peak_printer \u00b7 mid \u00b7 n=7 \u2014 watch peak path; do not treat expiry as the score"
     },
     {
       "handle": "@gabimarutrades",
@@ -3313,7 +3913,20 @@
       "followers": 457,
       "followers_as_of_et": "2026-10-06 16:26",
       "experience_tier": "amateur",
-      "experience_why": "YOLO tone, random calls, implausible size claims; no structured entries/exits."
+      "experience_why": "YOLO tone, random calls, implausible size claims; no structured entries/exits.",
+      "horizon": "mid",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 1,
+        "long": 0
+      },
+      "median_dte": 16,
+      "past": "scored n=4 \u00b7 expired 0 \u00b7 peak win_50 75% \u00b7 avg peak +106% \u00b7 avg exp -98% \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now -48% \u00b7 peak so far +69%",
+      "potential": "mid-horizon (15\u201390 DTE) book \u00b7 peak\u2260hold pattern \u2014 early peaks, weak expiry path \u00b7 if watched: track peak prints, not hold-to-expiry \u00b7 YOLO tone, random calls, implausible size claims; no structured entries/exits. \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "follow",
+      "cos_why": "peak_printer \u00b7 mid \u00b7 n=4 \u2014 watch peak path; do not treat expiry as the score"
     },
     {
       "handle": "@_TP888",
@@ -3332,7 +3945,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 2,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 1,
+        "long": 0
+      },
+      "median_dte": 16,
+      "past": "scored n=3 \u00b7 expired 0 \u00b7 peak win_50 67% \u00b7 avg peak +84% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "2 LIVE \u00b7 avg now +82% \u00b7 peak so far +126%",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 if watched: track peak prints, not hold-to-expiry \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "follow",
+      "cos_why": "peak_printer \u00b7 mixed \u00b7 n=3 \u2014 watch peak path; do not treat expiry as the score"
     },
     {
       "handle": "@BullTradeFinder",
@@ -3351,7 +3977,20 @@
       "followers": 123300,
       "followers_as_of_et": "2026-10-06 16:26",
       "experience_tier": "experienced",
-      "experience_why": "Educator/vendor chart levels + CSPs; heavily commercial (copy trade, win-rate claims)."
+      "experience_why": "Educator/vendor chart levels + CSPs; heavily commercial (copy trade, win-rate claims).",
+      "horizon": "mid",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 1,
+        "long": 0
+      },
+      "median_dte": 59,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +1215% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +936% \u00b7 peak so far +1215%",
+      "potential": "mid-horizon (15\u201390 DTE) book \u00b7 Educator/vendor chart levels + CSPs; heavily commercial (copy trade, win-rate claims). \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mid \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@HendersonAnalytic",
@@ -3370,7 +4009,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "No X account (doesn't exist). Book cites are Stocktwits \u2014 need ST followers skim."
+      "experience_why": "No X account (doesn't exist). Book cites are Stocktwits \u2014 need ST followers skim.",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 1,
+      "past": "scored n=2 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +143% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +204% \u00b7 peak so far +232%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 No X account (doesn't exist). Book cites are Stocktwits \u2014 need ST followers skim. \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=2 \u00b7 short \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@RSInvestments1",
@@ -3389,7 +4041,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 3,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +106% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now -46% \u00b7 peak so far +106%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 short \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@DudeOnR0ck",
@@ -3408,7 +4073,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 10,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +103% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +2% \u00b7 peak so far +103%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 short \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@AscendOptions",
@@ -3427,7 +4105,20 @@
       "followers": 546,
       "followers_as_of_et": "2026-10-06 16:26",
       "experience_tier": "mixed",
-      "experience_why": "Alerts with strike/expiry/fill + 30% stop; mostly 0DTE gambles, thin thesis."
+      "experience_why": "Alerts with strike/expiry/fill + 30% stop; mostly 0DTE gambles, thin thesis.",
+      "horizon": "short",
+      "horizon_n": 2,
+      "horizon_mix": {
+        "short": 2,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 2,
+      "past": "scored n=2 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +99% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "2 LIVE \u00b7 avg now -7% \u00b7 peak so far +99%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 Alerts with strike/expiry/fill + 30% stop; mostly 0DTE gambles, thin thesis. \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=2 \u00b7 short \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@A_Pevine",
@@ -3446,7 +4137,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "short",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 1,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": 7,
+      "past": "scored n=2 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +99% \u00b7 avg exp -98% \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now +1% \u00b7 peak so far +117%",
+      "potential": "short-DTE style (\u226414) \u2014 peaks print fast; expiry often fails \u00b7 peak\u2260hold pattern \u2014 early peaks, weak expiry path \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=2 \u00b7 short \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@redshiftbishop",
@@ -3465,7 +4169,20 @@
       "followers": 1215,
       "followers_as_of_et": "2026-10-06 16:26",
       "experience_tier": "amateur",
-      "experience_why": "Mostly allocation/BTC-treasury/gloat/sports; few specific options entries."
+      "experience_why": "Mostly allocation/BTC-treasury/gloat/sports; few specific options entries.",
+      "horizon": "long",
+      "horizon_n": 1,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 1
+      },
+      "median_dte": 171,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +92% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "1 LIVE \u00b7 avg now -48% \u00b7 peak so far +92%",
+      "potential": "longer-dated (>90 DTE) book \u00b7 Mostly allocation/BTC-treasury/gloat/sports; few specific options entries. \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 long \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@petesully18",
@@ -3484,7 +4201,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +90% \u00b7 avg exp -100% \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 peak\u2260hold pattern \u2014 early peaks, weak expiry path \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@imnotharsh",
@@ -3503,7 +4233,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +62% \u00b7 avg exp \u2014 \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@kimsingsong003",
@@ -3522,7 +4265,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mixed",
+      "horizon_n": 0,
+      "horizon_mix": {
+        "short": 0,
+        "mid": 0,
+        "long": 0
+      },
+      "median_dte": null,
+      "past": "scored n=1 \u00b7 expired 0 \u00b7 peak win_50 100% \u00b7 avg peak +50% \u00b7 avg exp -100% \u00b7 early\u2260exp 0",
+      "current": "no LIVE marks",
+      "potential": "mixed DTE \u2014 no bucket \u226560% \u00b7 peak\u2260hold pattern \u2014 early peaks, weak expiry path \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=1 \u00b7 mixed \u2014 gather more clean scored rows before follow"
     },
     {
       "handle": "@Bhaskinator",
@@ -3541,7 +4297,20 @@
       "followers": null,
       "followers_as_of_et": null,
       "experience_tier": "unknown",
-      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest"
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "horizon": "mid",
+      "horizon_n": 27,
+      "horizon_mix": {
+        "short": 3,
+        "mid": 22,
+        "long": 2
+      },
+      "median_dte": 42,
+      "past": "scored n=3 \u00b7 expired 3 \u00b7 peak win_50 33% \u00b7 avg peak +235% \u00b7 avg exp -100% \u00b7 early\u2260exp 1",
+      "current": "24 LIVE \u00b7 avg now -42% \u00b7 peak so far +39%",
+      "potential": "mid-horizon (15\u201390 DTE) book \u00b7 peak\u2260hold pattern \u2014 early peaks, weak expiry path \u00b7 accountability only \u2014 not trade advice",
+      "cos_eval": "watch",
+      "cos_why": "thin n=3 \u00b7 mid \u2014 gather more clean scored rows before follow"
     }
   ],
   "feasibility": [
@@ -3745,6 +4514,7 @@
     "marks republish: long clean n=62, peak win_50=0.5806, streak=1W.",
     "Short-premium n=45 excluded from headline.",
     "Hot streaks: 7 \u2014 @edgeflowcapital \u00b7 x 8W, @liquidittyedge \u00b7 x 7W, @HendersonAnalytic \u00b7 stocktwits 2W, @A_Pevine \u00b7 x 2W, @AscendOptions \u00b7 x 2W, @gabimarutrades \u00b7 x 1W",
-    "Peak sources: yahoo_daily_high / chartexchange_eod_high overwrite CBOE only when labeled and strictly higher (RULES v1.1)."
+    "Peak sources: yahoo_daily_high / chartexchange_eod_high overwrite CBOE only when labeled and strictly higher (RULES v1.1).",
+    "Handle stories: horizon (short\u226414 / mid 15\u201390 / long>90 / mixed) + past/current/potential + cos_eval."
   ]
 }

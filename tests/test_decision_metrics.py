@@ -14,6 +14,9 @@ sys.path.insert(0, str(ROOT / "src"))
 from hit_rate import (  # noqa: E402
     build_follow_shortlist,
     build_scoreboard,
+    compute_horizon,
+    cos_eval_for_handle,
+    dte_bucket,
     merge_handle_meta,
     rate_block,
 )
@@ -27,6 +30,8 @@ def _mark(
     expiry_pct: float | None,
     win_50: bool,
     cited_et: str = "2026-09-01 10:00",
+    expiry: str = "2026-09-10",
+    status: str | None = None,
     hindsight: bool = False,
     style: str | None = None,
 ) -> dict:
@@ -37,16 +42,18 @@ def _mark(
         "first_ask": 1.0,
         "peak_pct": peak_pct,
         "expiry_pct": expiry_pct,
+        "ask_pct": peak_pct * 0.5 if status != "EXPIRED" else None,
         "win_50": win_50,
         "win_2x": peak_pct >= 100,
         "win_3x": peak_pct >= 200,
         "hold_expiry_win": expiry_pct is not None and expiry_pct >= 50,
         "early_vs_expiry": win_50 and expiry_pct is not None and expiry_pct <= 0,
         "cited_et": cited_et,
-        "status": "EXPIRED" if expiry_pct is not None else "LIVE",
+        "expiry": expiry,
+        "status": status or ("EXPIRED" if expiry_pct is not None else "LIVE"),
         "hindsight_flag": hindsight,
         "style": style,
-        "contract": f"TEST 100C {cite_id}",
+        "contract": f"TEST 100C {expiry}",
     }
 
 
@@ -215,7 +222,7 @@ class DecisionMetricsTest(unittest.TestCase):
             finally:
                 hr.DEFAULT_HANDLES = old
 
-        self.assertEqual(sb["version"], 4)
+        self.assertEqual(sb["version"], 5)
         self.assertEqual(sb["overall"]["n"], 7)  # hindsight excluded
         self.assertIsNotNone(sb["overall"]["avg_peak_pct"])
         self.assertIsNotNone(sb["overall"]["avg_expiry_pct"])
@@ -230,6 +237,55 @@ class DecisionMetricsTest(unittest.TestCase):
         self.assertEqual(edge["followers"], 1325)
         self.assertEqual(edge["experience_tier"], "mixed")
         self.assertNotEqual(edge["avg_peak_pct"], edge["avg_expiry_pct"])
+        self.assertIn(edge["horizon"], ("short", "mid", "long", "mixed"))
+        self.assertIn(edge["cos_eval"], ("follow", "watch", "skip"))
+        self.assertTrue(edge.get("past"))
+        self.assertTrue(edge.get("current"))
+        self.assertTrue(edge.get("potential"))
+
+        fs_edge = next(r for r in sb["follow_shortlist"] if r["handle"] == "@edge")
+        self.assertEqual(fs_edge["cos_eval"], "follow")
+        self.assertEqual(fs_edge["horizon"], edge["horizon"])
+
+    def test_horizon_buckets(self):
+        self.assertEqual(dte_bucket(7), "short")
+        self.assertEqual(dte_bucket(14), "short")
+        self.assertEqual(dte_bucket(15), "mid")
+        self.assertEqual(dte_bucket(90), "mid")
+        self.assertEqual(dte_bucket(91), "long")
+        short_rows = [
+            _mark("s1", "@h", peak_pct=50, expiry_pct=-100, win_50=True, expiry="2026-09-05"),
+            _mark("s2", "@h", peak_pct=60, expiry_pct=-100, win_50=True, expiry="2026-09-08"),
+            _mark("s3", "@h", peak_pct=70, expiry_pct=-100, win_50=True, expiry="2026-09-10"),
+        ]
+        hz = compute_horizon(short_rows)
+        self.assertEqual(hz["horizon"], "short")
+        mixed_rows = [
+            _mark("a", "@h", peak_pct=50, expiry_pct=0, win_50=True, expiry="2026-09-05"),  # 4d short
+            _mark("b", "@h", peak_pct=50, expiry_pct=0, win_50=True, expiry="2026-10-15"),  # 44d mid
+            _mark("c", "@h", peak_pct=50, expiry_pct=0, win_50=True, expiry="2027-01-15"),  # long
+        ]
+        self.assertEqual(compute_horizon(mixed_rows)["horizon"], "mixed")
+
+    def test_cos_eval_labels(self):
+        self.assertEqual(
+            cos_eval_for_handle(
+                shortlist_label="hold_candidate", n=5, win_50=0.8, book_w50=0.5, horizon="short"
+            )["cos_eval"],
+            "follow",
+        )
+        self.assertEqual(
+            cos_eval_for_handle(
+                shortlist_label="avoid", n=6, win_50=0.1, book_w50=0.5, horizon="mid"
+            )["cos_eval"],
+            "skip",
+        )
+        self.assertEqual(
+            cos_eval_for_handle(
+                shortlist_label="thin_sample", n=1, win_50=1.0, book_w50=0.5, horizon="short"
+            )["cos_eval"],
+            "watch",
+        )
 
 
 if __name__ == "__main__":

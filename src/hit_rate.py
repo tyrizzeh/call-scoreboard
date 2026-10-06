@@ -494,6 +494,371 @@ def merge_handle_meta(row: Dict[str, Any], dossier: Dict[str, Dict[str, Any]]) -
     return row
 
 
+_CONTRACT_EXP_RE = re.compile(r"(20\d{2}-\d{2}-\d{2})\s*$")
+
+
+def parse_expiry_date(row: Dict[str, Any]) -> Optional[str]:
+    exp = row.get("expiry")
+    if exp:
+        return str(exp)[:10]
+    contract = str(row.get("contract") or "")
+    m = _CONTRACT_EXP_RE.search(contract)
+    return m.group(1) if m else None
+
+
+def dte_days(row: Dict[str, Any]) -> Optional[int]:
+    """Calendar DTE at cite time (expiry date − cited date)."""
+    cited = str(row.get("cited_et") or "")[:10]
+    exp = parse_expiry_date(row)
+    if not cited or not exp:
+        return None
+    try:
+        c = datetime.strptime(cited, "%Y-%m-%d").date()
+        e = datetime.strptime(exp, "%Y-%m-%d").date()
+        return (e - c).days
+    except ValueError:
+        return None
+
+
+def dte_bucket(dte: Optional[int]) -> Optional[str]:
+    """short ≤14 · mid 15–90 · long >90."""
+    if dte is None:
+        return None
+    if dte <= 14:
+        return "short"
+    if dte <= 90:
+        return "mid"
+    return "long"
+
+
+def compute_horizon(marks: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Dominant DTE bucket; mixed if no bucket ≥60% of known-DTE rows."""
+    mix = {"short": 0, "mid": 0, "long": 0}
+    dtes: List[int] = []
+    for m in marks:
+        d = dte_days(m)
+        b = dte_bucket(d)
+        if b is None or d is None:
+            continue
+        mix[b] += 1
+        dtes.append(d)
+    n = sum(mix.values())
+    if n == 0:
+        return {
+            "horizon": "mixed",
+            "horizon_n": 0,
+            "horizon_mix": mix,
+            "median_dte": None,
+        }
+    horizon = "mixed"
+    for name in ("short", "mid", "long"):
+        if mix[name] / n >= 0.60:
+            horizon = name
+            break
+    dtes_sorted = sorted(dtes)
+    mid = len(dtes_sorted) // 2
+    median = (
+        dtes_sorted[mid]
+        if len(dtes_sorted) % 2
+        else round((dtes_sorted[mid - 1] + dtes_sorted[mid]) / 2)
+    )
+    return {
+        "horizon": horizon,
+        "horizon_n": n,
+        "horizon_mix": mix,
+        "median_dte": median,
+    }
+
+
+def _fmt_signed_pct(x: Any) -> str:
+    if x is None:
+        return "—"
+    try:
+        v = float(x)
+    except (TypeError, ValueError):
+        return "—"
+    return f"{v:+.0f}%"
+
+
+def summarize_past(hmarks: List[Dict[str, Any]], stats: Dict[str, Any]) -> str:
+    """Scored / expired summary (peak ≠ expiry)."""
+    scored = [
+        m for m in hmarks
+        if m.get("first_ask") is not None and m.get("win_50") is not None
+    ]
+    expired = [m for m in hmarks if str(m.get("status") or "").upper() == "EXPIRED"]
+    early = sum(1 for m in scored if m.get("early_vs_expiry"))
+    n = stats.get("n")
+    if n is None:
+        n = len(scored)
+    w50 = stats.get("win_50")
+    w50_s = "n/a" if w50 is None else f"{round(w50 * 100)}%"
+    return (
+        f"scored n={n} · expired {len(expired)} · peak win_50 {w50_s} · "
+        f"avg peak {_fmt_signed_pct(stats.get('avg_peak_pct'))} · "
+        f"avg exp {_fmt_signed_pct(stats.get('avg_expiry_pct'))} · "
+        f"early≠exp {early}"
+    )
+
+
+def summarize_current(hmarks: List[Dict[str, Any]]) -> str:
+    """LIVE book snapshot."""
+    live = [m for m in hmarks if str(m.get("status") or "").upper() == "LIVE"]
+    if not live:
+        return "no LIVE marks"
+    now_vals = [m["ask_pct"] for m in live if m.get("ask_pct") is not None]
+    peak_vals = [m["peak_pct"] for m in live if m.get("peak_pct") is not None]
+    avg_now = round(sum(now_vals) / len(now_vals), 1) if now_vals else None
+    avg_peak = round(sum(peak_vals) / len(peak_vals), 1) if peak_vals else None
+    return (
+        f"{len(live)} LIVE · avg now {_fmt_signed_pct(avg_now)} · "
+        f"peak so far {_fmt_signed_pct(avg_peak)}"
+    )
+
+
+def summarize_potential(
+    horizon: str,
+    stats: Dict[str, Any],
+    dossier: Optional[Dict[str, Any]] = None,
+    shortlist_label: Optional[str] = None,
+) -> str:
+    """Style if watched — accountability framing, never trade advice."""
+    bits: List[str] = []
+    if horizon == "short":
+        bits.append("short-DTE style (≤14) — peaks print fast; expiry often fails")
+    elif horizon == "mid":
+        bits.append("mid-horizon (15–90 DTE) book")
+    elif horizon == "long":
+        bits.append("longer-dated (>90 DTE) book")
+    else:
+        bits.append("mixed DTE — no bucket ≥60%")
+
+    avg_peak = stats.get("avg_peak_pct")
+    avg_exp = stats.get("avg_expiry_pct")
+    if avg_peak is not None and avg_exp is not None and avg_peak >= 50 and avg_exp < 0:
+        bits.append("peak≠hold pattern — early peaks, weak expiry path")
+    elif avg_exp is not None and avg_exp >= 0:
+        bits.append("expiry path more durable than pure peak printers")
+
+    if shortlist_label == "peak_printer":
+        bits.append("if watched: track peak prints, not hold-to-expiry")
+    elif shortlist_label == "hold_candidate":
+        bits.append("if watched: compare hold-to-expiry vs peak separately")
+    elif shortlist_label == "avoid":
+        bits.append("if watched: fade optics — rates lag the book")
+
+    why = (dossier or {}).get("experience_why") or ""
+    if why and "not skimmed" not in why.lower():
+        bits.append(why)
+    bits.append("accountability only — not trade advice")
+    return " · ".join(bits)
+
+
+def cos_eval_for_handle(
+    *,
+    shortlist_label: Optional[str],
+    n: int,
+    win_50: Optional[float],
+    book_w50: Optional[float],
+    flags: Optional[Dict[str, Any]] = None,
+    horizon: str = "mixed",
+) -> Dict[str, str]:
+    """CoS accountability eval: follow | watch | skip (+ why). Not trade advice."""
+    flags = flags or {}
+    short_n = flags.get("short_premium_excluded") or 0
+    hind_n = flags.get("hindsight_cites") or 0
+
+    if shortlist_label == "avoid" or (
+        n >= 5 and win_50 is not None and book_w50 is not None and win_50 < book_w50 - 0.20
+    ):
+        return {
+            "cos_eval": "skip",
+            "cos_why": (
+                f"win_50 lags book on n={n} — deprioritize harvest "
+                f"(accountability fade, not a trade call)"
+            ),
+        }
+    if n <= 0 and hind_n:
+        return {
+            "cos_eval": "skip",
+            "cos_why": "hindsight / contaminated only — out of headline",
+        }
+    if short_n >= 5 and (n or 0) <= 2:
+        return {
+            "cos_eval": "skip",
+            "cos_why": "CSP/CC-heavy park — short-premium off long peak path",
+        }
+    if shortlist_label == "hold_candidate" and n >= 3:
+        return {
+            "cos_eval": "follow",
+            "cos_why": (
+                f"hold_candidate · {horizon} · n={n} — thicken before crowning; "
+                f"peak≠expiry still shown"
+            ),
+        }
+    if shortlist_label == "peak_printer" and n >= 3:
+        return {
+            "cos_eval": "follow",
+            "cos_why": (
+                f"peak_printer · {horizon} · n={n} — watch peak path; "
+                f"do not treat expiry as the score"
+            ),
+        }
+    if shortlist_label in ("thin_sample", None) or n < 3:
+        return {
+            "cos_eval": "watch",
+            "cos_why": f"thin n={n} · {horizon} — gather more clean scored rows before follow",
+        }
+    if shortlist_label == "peak_printer":
+        return {
+            "cos_eval": "watch",
+            "cos_why": f"peak_printer but thin · {horizon} — deepen sample",
+        }
+    return {
+        "cos_eval": "watch",
+        "cos_why": f"keep sampling · {horizon} · n={n}",
+    }
+
+
+def build_handle_story(
+    hmarks: List[Dict[str, Any]],
+    stats: Dict[str, Any],
+    overall: Dict[str, Any],
+    *,
+    shortlist_label: Optional[str] = None,
+    dossier: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
+    """Horizon + past/current/potential + cos_eval for one handle."""
+    hz = compute_horizon(hmarks)
+    label = shortlist_label
+    past = summarize_past(hmarks, stats)
+    current = summarize_current(hmarks)
+    potential = summarize_potential(hz["horizon"], stats, dossier, label)
+    cos = cos_eval_for_handle(
+        shortlist_label=label,
+        n=int(stats.get("n") or 0),
+        win_50=stats.get("win_50"),
+        book_w50=overall.get("win_50"),
+        flags=stats.get("flags") or {},
+        horizon=hz["horizon"],
+    )
+    return {
+        **hz,
+        "past": past,
+        "current": current,
+        "potential": potential,
+        **cos,
+    }
+
+
+STORY_KEYS = (
+    "horizon",
+    "horizon_n",
+    "horizon_mix",
+    "median_dte",
+    "past",
+    "current",
+    "potential",
+    "cos_eval",
+    "cos_why",
+)
+
+
+def recover_mark_rows_from_scoreboard(sb: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Best-effort mark rows from published scoreboard sections (when marks.json missing)."""
+    by_id: Dict[str, Dict[str, Any]] = {}
+
+    def _put(row: Dict[str, Any]) -> None:
+        cid = row.get("cite_id")
+        if not cid:
+            return
+        prev = by_id.get(cid, {})
+        merged = {**prev, **{k: v for k, v in row.items() if v is not None}}
+        by_id[cid] = merged
+
+    for r in sb.get("live_board") or []:
+        _put({**r, "status": r.get("status") or "LIVE"})
+    for r in sb.get("graveyard_top10") or []:
+        _put({**r, "status": r.get("status") or "EXPIRED"})
+    for r in (sb.get("contaminated") or {}).get("rows") or []:
+        _put({**r, "hindsight_flag": True})
+    for r in (sb.get("short_premium") or {}).get("rows") or []:
+        _put(dict(r))
+    for r in sb.get("feasibility") or []:
+        _put(dict(r))
+    return list(by_id.values())
+
+
+def attach_handle_stories(
+    sb: Dict[str, Any],
+    marks_by_handle: Optional[Dict[str, List[Dict[str, Any]]]] = None,
+    dossier: Optional[Dict[str, Dict[str, Any]]] = None,
+) -> Dict[str, Any]:
+    """Attach horizon / past / current / potential / cos_eval onto leaderboard + shortlist."""
+    dossier = dossier if dossier is not None else load_handles()
+    overall = sb.get("overall") or {}
+    if marks_by_handle is None:
+        marks_by_handle = {}
+        for m in recover_mark_rows_from_scoreboard(sb):
+            marks_by_handle.setdefault(m.get("handle") or "unknown", []).append(m)
+
+    label_by_handle = {
+        r.get("handle"): r.get("label")
+        for r in (sb.get("follow_shortlist") or [])
+        if r.get("handle")
+    }
+
+    for row in sb.get("leaderboard") or []:
+        handle = row.get("handle") or "unknown"
+        hmarks = marks_by_handle.get(handle) or []
+        story = build_handle_story(
+            hmarks,
+            row,
+            overall,
+            shortlist_label=label_by_handle.get(handle),
+            dossier=dossier.get(handle),
+        )
+        row.update(story)
+
+    lb_by = {r.get("handle"): r for r in (sb.get("leaderboard") or [])}
+    for row in sb.get("follow_shortlist") or []:
+        handle = row.get("handle") or "unknown"
+        src = lb_by.get(handle)
+        if src:
+            for k in STORY_KEYS:
+                if k in src:
+                    row[k] = src[k]
+            continue
+        hmarks = marks_by_handle.get(handle) or []
+        story = build_handle_story(
+            hmarks,
+            row,
+            overall,
+            shortlist_label=row.get("label"),
+            dossier=dossier.get(handle),
+        )
+        row.update(story)
+
+    for row in sb.get("hot_streaks") or []:
+        handle = row.get("handle")
+        if not handle:
+            continue
+        src = lb_by.get(handle)
+        if not src:
+            continue
+        for k in ("horizon", "cos_eval", "past", "current"):
+            if k in src:
+                row[k] = src[k]
+
+    sb["version"] = max(int(sb.get("version") or 4), 5)
+    notes = list(sb.get("notes") or [])
+    note = "Handle stories: horizon (short≤14 / mid 15–90 / long>90 / mixed) + past/current/potential + cos_eval."
+    if note not in notes:
+        notes.append(note)
+    sb["notes"] = notes
+    return sb
+
+
 def build_follow_shortlist(
     leaderboard: List[Dict[str, Any]],
     overall: Dict[str, Any],
@@ -821,8 +1186,8 @@ def build_scoreboard(marks_path: Path, cites_path: Path = DEFAULT_CITES) -> Dict
         leaderboard, overall, unscored_by_handle, early_by_handle, dossier
     )
 
-    return {
-        "version": 4,
+    sb = {
+        "version": 5,
         "rules_ref": "RULES.md v1.1",
         "updated_et": now_et_str(),
         "disclaimer": "Accountability only — social ≠ trade signal. Peak ≠ expiry. No CLEAR tickets. Hindsight excluded from headline.",
@@ -864,6 +1229,7 @@ def build_scoreboard(marks_path: Path, cites_path: Path = DEFAULT_CITES) -> Dict
             "Peak sources: yahoo_daily_high / chartexchange_eod_high overwrite CBOE only when labeled and strictly higher (RULES v1.1).",
         ],
     }
+    return attach_handle_stories(sb, by_handle, dossier)
 
 
 def _fmt_rate(r) -> str:
@@ -908,13 +1274,14 @@ def render_markdown(sb: Dict[str, Any]) -> str:
         "",
         "## Leaderboard (clean cites only)",
         "",
-        "| Handle | n | peak win_50 | avg peak% | avg exp% | streak | conf |",
-        "|--------|---|-------------|-----------|----------|--------|------|",
+        "| Handle | n | peak win_50 | avg peak% | avg exp% | horizon | cos | streak | conf |",
+        "|--------|---|-------------|-----------|----------|---------|-----|--------|------|",
     ]
     for r in sb["leaderboard"]:
         lines.append(
             f"| {r['handle']} | {r['n']} | {_fmt_rate(r['win_50'])} | "
             f"{r.get('avg_peak_pct')} | {r.get('avg_expiry_pct')} | "
+            f"{r.get('horizon')} | {r.get('cos_eval')} | "
             f"{r['current_streak_label']} | {r['confidence']} |"
         )
     # rewrite leaderboard header columns
@@ -922,15 +1289,27 @@ def render_markdown(sb: Dict[str, Any]) -> str:
         "",
         "## Follow shortlist (decision view)",
         "",
-        "| Handle | label | n | win_50 | avg peak% | avg exp% | followers | xp | streak | why |",
-        "|--------|-------|---|--------|-----------|----------|-----------|----|--------|-----|",
+        "| Handle | label | cos | horizon | n | win_50 | avg peak% | avg exp% | followers | xp | why |",
+        "|--------|-------|-----|---------|---|--------|-----------|----------|-----------|----|-----|",
     ]
     for r in sb.get("follow_shortlist", []):
         lines.append(
-            f"| {r.get('handle')} | {r.get('label')} | {r.get('n')} | {_fmt_rate(r.get('win_50'))} | "
+            f"| {r.get('handle')} | {r.get('label')} | {r.get('cos_eval')} | {r.get('horizon')} | "
+            f"{r.get('n')} | {_fmt_rate(r.get('win_50'))} | "
             f"{r.get('avg_peak_pct')} | {r.get('avg_expiry_pct')} | {r.get('followers')} | "
-            f"{r.get('experience_tier')} | {r.get('streak')} | {r.get('why')} |"
+            f"{r.get('experience_tier')} | {r.get('why')} |"
         )
+    lines += [
+        "",
+        "### Shortlist stories (past · current · potential)",
+        "",
+    ]
+    for r in sb.get("follow_shortlist", []):
+        lines.append(f"- **{r.get('handle')}** · `{r.get('cos_eval')}` · horizon `{r.get('horizon')}`")
+        lines.append(f"  - past: {r.get('past')}")
+        lines.append(f"  - current: {r.get('current')}")
+        lines.append(f"  - potential: {r.get('potential')}")
+        lines.append(f"  - cos: {r.get('cos_why')}")
     lines += [
         "",
         "## Live (peak vs now)",
