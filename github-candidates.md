@@ -134,3 +134,4 @@
 3. **LuxAlgo trade-journal metrics + (optional) Streamlit from tradingJournal/TastyMechanics** — copy win-rate / streak / expectancy definitions and a thin Streamlit phone board over `cites.json`/`marks.json`; keep Notion as the team-facing table until the Streamlit board is sticky.
 
 **Explicitly do later / don’t copy blindly:** kollateral UX (dossier, anti-delete), twag X triage, Webull-Trading-Bot symbol helpers. Never enable Discord user-token scraping or auto-order placement for Ty’s accountability product.
+
