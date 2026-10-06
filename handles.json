@@ -1,0 +1,447 @@
+{
+  "updated_et": "2026-10-06 16:26",
+  "schema": {
+    "handle": "@name",
+    "platform": "x|stocktwits|reddit",
+    "followers": null,
+    "followers_as_of_et": null,
+    "experience_tier": "experienced|mixed|amateur|unknown",
+    "experience_why": "one-line skim of recent options posts/threads",
+    "notes": ""
+  },
+  "note": "Schema-first. Followers/experience filled by Cite Scout on harvest \u2014 null/unknown OK until skim. Vanity \u2260 edge.",
+  "handles": {
+    "@TradeTactician1": {
+      "handle": "@TradeTactician1",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@rockypepino": {
+      "handle": "@rockypepino",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@Bhaskinator": {
+      "handle": "@Bhaskinator",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@fidget_flow": {
+      "handle": "@fidget_flow",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@robot2trade1": {
+      "handle": "@robot2trade1",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@Gary_Sethi": {
+      "handle": "@Gary_Sethi",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@optionwhalesio": {
+      "handle": "@optionwhalesio",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@_TP888": {
+      "handle": "@_TP888",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@bullish_sasha": {
+      "handle": "@bullish_sasha",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@haddad_jac79558": {
+      "handle": "@haddad_jac79558",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@Trade_Intel_": {
+      "handle": "@Trade_Intel_",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@aampatriot1": {
+      "handle": "@aampatriot1",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@kimsingsong003": {
+      "handle": "@kimsingsong003",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@broinvests": {
+      "handle": "@broinvests",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@prosperityjoe78": {
+      "handle": "@prosperityjoe78",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@teamjayday": {
+      "handle": "@teamjayday",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@Trader101Jp": {
+      "handle": "@Trader101Jp",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@bintzan9a": {
+      "handle": "@bintzan9a",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@petesully18": {
+      "handle": "@petesully18",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@ippon_macro": {
+      "handle": "@ippon_macro",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@wvdwtrading": {
+      "handle": "@wvdwtrading",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@TradingChick25": {
+      "handle": "@TradingChick25",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@TheThetaDawg": {
+      "handle": "@TheThetaDawg",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "u/Feisty_Level_1412": {
+      "handle": "u/Feisty_Level_1412",
+      "platform": "reddit",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "u/Glum-Illustrator-841": {
+      "handle": "u/Glum-Illustrator-841",
+      "platform": "reddit",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@DallasAnalytics": {
+      "handle": "@DallasAnalytics",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@HendersonAnalytic": {
+      "handle": "@HendersonAnalytic",
+      "platform": "stocktwits",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "No X account (doesn't exist). Book cites are Stocktwits \u2014 need ST followers skim.",
+      "notes": "priority harvest; X miss"
+    },
+    "@gabimarutrades": {
+      "handle": "@gabimarutrades",
+      "platform": "x",
+      "followers": 457,
+      "followers_as_of_et": "2026-10-06 16:26",
+      "experience_tier": "amateur",
+      "experience_why": "YOLO tone, random calls, implausible size claims; no structured entries/exits.",
+      "notes": "priority harvest \u2014 experience suggests demote?"
+    },
+    "@A_Pevine": {
+      "handle": "@A_Pevine",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@imnotharsh": {
+      "handle": "@imnotharsh",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@TeddyAfro": {
+      "handle": "@TeddyAfro",
+      "platform": "stocktwits",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@PrimeBlockXX5": {
+      "handle": "@PrimeBlockXX5",
+      "platform": "stocktwits",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@DudeOnR0ck": {
+      "handle": "@DudeOnR0ck",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@AscendOptions": {
+      "handle": "@AscendOptions",
+      "platform": "x",
+      "followers": 546,
+      "followers_as_of_et": "2026-10-06 16:26",
+      "experience_tier": "mixed",
+      "experience_why": "Alerts with strike/expiry/fill + 30% stop; mostly 0DTE gambles, thin thesis.",
+      "notes": "priority harvest"
+    },
+    "@snipetrades": {
+      "handle": "@snipetrades",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@RSInvestments1": {
+      "handle": "@RSInvestments1",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@liquidittyedge": {
+      "handle": "@liquidittyedge",
+      "platform": "x",
+      "followers": 665,
+      "followers_as_of_et": "2026-10-06 16:26",
+      "experience_tier": "mixed",
+      "experience_why": "Dated entries + trim/close links; also hype recaps and Discord promo.",
+      "notes": "priority harvest"
+    },
+    "@edgeflowcapital": {
+      "handle": "@edgeflowcapital",
+      "platform": "x",
+      "followers": 1325,
+      "followers_as_of_et": "2026-10-06 16:26",
+      "experience_tier": "mixed",
+      "experience_why": "Consistent Opened/Closed alerts with expiry+fill; some implausible sizes + Telegram brag.",
+      "notes": "priority harvest"
+    },
+    "@WallStreetFlows": {
+      "handle": "@WallStreetFlows",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@ElmagoMagico": {
+      "handle": "@ElmagoMagico",
+      "platform": "stocktwits",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@redshiftbishop": {
+      "handle": "@redshiftbishop",
+      "platform": "x",
+      "followers": 1215,
+      "followers_as_of_et": "2026-10-06 16:26",
+      "experience_tier": "amateur",
+      "experience_why": "Mostly allocation/BTC-treasury/gloat/sports; few specific options entries.",
+      "notes": "sample Lane B; HOOD+IREN in book"
+    },
+    "@MrMoonTrain": {
+      "handle": "@MrMoonTrain",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@360_trader": {
+      "handle": "@360_trader",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@AkiraOrderFlow": {
+      "handle": "@AkiraOrderFlow",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@BullTradeFinder": {
+      "handle": "@BullTradeFinder",
+      "platform": "x",
+      "followers": 123300,
+      "followers_as_of_et": "2026-10-06 16:26",
+      "experience_tier": "experienced",
+      "experience_why": "Educator/vendor chart levels + CSPs; heavily commercial (copy trade, win-rate claims).",
+      "notes": "sample; commercial \u2014 QC watch"
+    },
+    "@epictrades1": {
+      "handle": "@epictrades1",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    },
+    "@Golden_Ted_": {
+      "handle": "@Golden_Ted_",
+      "platform": "x",
+      "followers": 2750,
+      "followers_as_of_et": "2026-10-06 16:26",
+      "experience_tier": "mixed",
+      "experience_why": "Retail dated strikes/fills + stops; discretionary single-name focus, not structured log.",
+      "notes": "sample Lane B"
+    },
+    "@CassyTrades": {
+      "handle": "@CassyTrades",
+      "platform": "x",
+      "followers": null,
+      "followers_as_of_et": null,
+      "experience_tier": "unknown",
+      "experience_why": "not skimmed yet \u2014 Cite Scout to fill on next harvest",
+      "notes": ""
+    }
+  }
+}

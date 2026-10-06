@@ -1,105 +1,133 @@
-# Call Scoreboard
+# Call Scoreboard (options social accountability)
 
-Ty Pham’s **options social accountability board**: cite → mark → hit-rate, with **peak% vs expiry%** kept as separate scores (RULES.md v1).
+Team room: **Call Scoreboard**
+- **Cite Scout** — harvest dated X/Reddit options plays → `cites.json`
+- **Mark Desk** — ask % since first cite, live + graveyard → `marks.json`
+- **Hit Rate** — overall + per-handle hit rate, current/longest streaks → `scoreboard.json` / `scoreboard.md`
 
-Social callouts are evidence to interrogate, never a copy signal. This stack does **not** CLEAR trades or auto-trade. Scripts never invent quotes.
+**Social callouts are evidence to interrogate, never a copy signal. This stack does not CLEAR trades or auto-trade.**
 
-## Pipeline
+## Cite schema (one row per play)
+| field | notes |
+| handle | @x or u/reddit |
+| platform | x \| reddit |
+| post_url | required |
+| cited_et | YYYY-MM-DD HH:MM America/New_York |
+| underlying | ticker |
+| side | C \| P |
+| strike | number |
+| expiry | YYYY-MM-DD |
+| cite_ask | number or null if not stated |
+| claim_quote | short verbatim |
+| hindsight_flag | true if looks after-the-fact |
 
-| Role | Job | Output |
-|------|-----|--------|
-| **Cite Scout** | Harvest dated X/Reddit options plays | `cites.json` |
-| **Mark Desk** | Stamp ask near cite; track peak / now / exit / expiry | `marks.json` |
-| **Hit Rate** | Overall + per-handle hit rate, streaks | `scoreboard.json`, `scoreboard.md` |
+## Mark schema (RULES v1)
+| field | notes |
+| cite_id | joins cite |
+| feed | webull_live \| cboe_delayed \| public \| stated_ask |
+| as_of_et | mark stamp |
+| first_ask | ask near cite (stated premium preferred when present) |
+| now_ask / ask_pct | latest while LIVE |
+| **peak_ask / peak_pct** | max ask while alive (max-gain map) — separate from expiry |
+| time_to_peak_et | when peak printed |
+| **exit_ask / exit_pct** | poster-stated sell/STC if any; else null |
+| **expiry_ask / expiry_pct** | at/near expiration; 0 if OTM worthless |
+| status | LIVE \| GRAVEYARD \| EXPIRED \| UNMARKED |
+| win_50 / 2x / 3x | **peak-based** headline wins |
+| hold_expiry_win | expiry_pct ≥ +50% |
+| early_vs_expiry | peak ≥ +50% AND expiry ≤ 0 |
 
-Phone board: `dashboard/index.html` (peak ≠ expiry front and center).
+## Hit Rate outputs (RULES v1.1 / scoreboard v4)
+- **Headline overall hit rate** = peak win_50 / clean long scored rows (hindsight + short-premium out)
+- **avg_peak_pct / avg_expiry_pct** (and medians) on overall + per-handle — peak ≠ expiry always
+- **Hold-to-expiry hit rate** + **early-exit opportunity rate** (peaked but expiry ≤0)
+- Book + per-handle streaks on **peak** win_50 (current + longest W/L)
+- **follow_shortlist** labels: `peak_printer` | `hold_candidate` | `thin_sample` | `avoid` (accountability follows — not trade advice)
+- Merges `handles.json` dossier (followers, experience_tier, experience_why) into shortlist + Leaders
+- Confidence: thin n<10 / decent / strong — never crown n&lt;10
+- Mobile phone board: `dashboard/index.html` (Follow shortlist + Leaders show avg %, followers, xp)
+  - **UX v1.1 (Scoreboard Design):** sticky hero (hit + streak), bottom thumb tabs Overview/Live/Leaders/Gone, card rows (no wide tables), Peak/Now sort, contaminated banner, feasibility + hot streaks. Prefer Add to Home Screen over Sheets for day-to-day.
 
-## RULES.md v1 (peak vs expiry)
+Iterate definitions with Ty; log rule changes in `RULES.md`.
 
-A callout can **peak +50%** and still **expire worthless**. Headline wins use the peak path; hold-to-expiry is a separate column.
+---
 
-- **peak_ask / peak_pct** — max ask while alive (max-gain map)
-- **expiry_ask / expiry_pct** — at/near expiration; 0 if OTM worthless
-- **exit_ask / exit_pct** — poster-stated STC only; else null
-- **win_50 / win_2x / win_3x** — peak-based
-- **hold_expiry_win** — expiry_pct ≥ +50%
-- **early_vs_expiry** — peak ≥ +50% and expiry ≤ 0
-- Headline **overall hit rate** = peak win_50 / marked cites with valid first_ask
-- Exclude `hindsight_flag=true` from headline n (contaminated bucket)
-- Streaks: consecutive peak win_50 by `cited_et`; unmarked breaks the streak
-
-Full definitions: [`RULES.md`](RULES.md) (keep v1 intact; log changes there).
-
-## Data files
-
-| File | Role |
-|------|------|
-| `cites.json` | Cite Scout rows (`handle`, `platform`, `post_url`, `cited_et`, contract fields, `cite_ask`, `claim_quote`, `hindsight_flag`) |
-| `marks.json` | Mark Desk rows joined by `cite_id` (peak / now / exit / expiry, status, win flags) |
-| `scoreboard.json` | Machine hit-rate + streaks |
-| `scoreboard.md` | Human report |
-| `dashboard/scoreboard.json` | Snapshot for the static phone board (refresh from root scoreboard when serving) |
-
-Do not wipe or invent marks. Prefer Webull live when available; until then `public` (yfinance) is labeled on each mark.
-
-## How to run
-
-Python 3.10+. For live/public marks: `pip install yfinance`.
+## How to run (box)
 
 ```bash
-# From repo root
+cd /workspace/call-scoreboard
 
 # 1) Parse free-text callouts (Cite Scout helper)
 python3 src/parse_contract.py 'SPY 780C 10/10'
 python3 src/parse_contract.py 'AAPL $500C for 9/12' --json
 python3 src/parse_contract.py --json <<< '$TSLA 420 calls Oct 23'
 
-# 2) Mark cites (yfinance public chain; feed=public)
+# 2) Mark cites (yfinance public chain; labels feed=public)
+#    Prefer Webull live when connector is healthy — until then public is fine.
 python3 src/mark_cites.py
-# Recompute win flags without re-quoting:
+#    Recompute win flags without re-quoting:
 python3 src/mark_cites.py --no-refresh
 
-# 3) Hit rate + streaks → scoreboard.json + scoreboard.md
+# 3) Hit rate + streaks → scoreboard.json + scoreboard.md (+ dashboard republish)
 python3 src/hit_rate.py
+# same via wrapper:
+python3 scripts/regen_scoreboard.py
 
-# 4) Phone board (fetch needs a static server — open dashboard/)
-python3 -m http.server 8765 --directory .
-# → http://127.0.0.1:8765/dashboard/
-# Share → Add to Home Screen on phone
+# 4) Decision-surface checks (fixture marks; no live quotes)
+python3 -m unittest tests.test_decision_metrics -v
+
+# 5) Phone board (fetch needs a tiny static server)
+python3 -m http.server 8765 --directory /workspace/call-scoreboard
+# open http://127.0.0.1:8765/dashboard/  → Share → Add to Home Screen
 ```
 
-Optional paths: `mark_cites.py --cites PATH --marks PATH`; `hit_rate.py --marks PATH --cites PATH --out PATH --md PATH`.
+Deps: Python 3.10+, `yfinance` (for public option asks). No auto-trade packages required.
+
+---
+
+## Open-source reuse (vendored under `vendor/`)
+
+| Repo | License | What we borrowed |
+|------|---------|------------------|
+| [AdoNunes/DiscordAlertsTrader](https://github.com/AdoNunes/DiscordAlertsTrader) | BSD-3-Clause | Cite→live mark→analyst rollup pattern (`AlertsTracker.price_now`, portfolio mark loop, `max_pnl` style peak %). **Not** Discord user-token scrape or order placement. |
+| [austinpkugler/trendfin](https://github.com/austinpkugler/trendfin) | MIT | `ContractParser` regex ideas for free-text options (`AAPL $500C for 9/12`, glued `780C`, month/day expiry). Reimplemented lean in `src/parse_contract.py`. |
+| [LuxAlgo/trade-journal](https://github.com/LuxAlgo/trade-journal) | MIT | Win-rate / streak math (`currentStreak` signed run, `maxWinStreak` / `maxLossStreak`) from `packages/core/src/metrics.ts`; KPI card layout inspiration for the phone board. |
+
+Also researched (not vendored this pass): kollateral accountability UX, twag X triage, journedge OCC parse, Streamlit journals — see `github-candidates.md`.
+
+---
 
 ## Layout
 
 ```
-.
-  cites.json            # Cite Scout
-  marks.json            # Mark Desk
-  scoreboard.json       # Hit Rate (machine)
-  scoreboard.md         # Hit Rate (human)
-  RULES.md              # v1 peak / expiry / streaks
-  github-candidates.md  # related OSS notes
+call-scoreboard/
+  cites.json          # Cite Scout output
+  marks.json          # Mark Desk output
+  handles.json        # followers + experience_tier dossiers
+  scoreboard.json     # Hit Rate machine output (v4 + follow_shortlist)
+  scoreboard.md       # Human report
+  DIGEST.md / DISCOVERY.md / CONTINUE_HERE.md
+  RULES.md            # win_50 / streak definitions
+  github-candidates.md
+  scripts/regen_scoreboard.py
+  tests/test_decision_metrics.py
   src/
     parse_contract.py
     mark_cites.py
+    history_peak.py
     hit_rate.py
+    qc/
   dashboard/
-    index.html          # mobile-first board
-    scoreboard.json     # board data snapshot
-  vendor/               # shallow reference clones (licenses preserved)
+    index.html        # mobile-first phone board
+    scoreboard.json   # republished snapshot
+  vendor/             # shallow clones (reference only)
 ```
 
-## Vendored reference (`vendor/`)
+## Caveats (polish backlog)
+- **Peak while alive** needs recurring marks (hourly). Already-expired cites get a single stamp → peak_pct may equal expiry_pct until we wire historical option OHLC.
+- **Webull live** preferred over yfinance `public` when connector is healthy; feed is always labeled.
+- Exit asks only from explicit STC/closed/trimmed language — bare “Sold N contracts” is treated as STO entry, not exit.
+- Social ≠ signal. No auto-trade.
 
-| Repo | License | Borrowed |
-|------|---------|----------|
-| [AdoNunes/DiscordAlertsTrader](https://github.com/AdoNunes/DiscordAlertsTrader) | BSD-3-Clause | Cite→live mark→rollup / max_pnl-style peak % (not Discord scrape or order placement) |
-| [austinpkugler/trendfin](https://github.com/austinpkugler/trendfin) | MIT | Free-text contract regex ideas → `src/parse_contract.py` |
-| [LuxAlgo/trade-journal](https://github.com/LuxAlgo/trade-journal) | MIT | Win-rate / streak math; KPI layout inspiration for the phone board |
-
-## Caveats
-
-- Peak while alive needs recurring marks; already-expired cites may show peak_pct ≈ expiry_pct until historical option OHLC is wired.
-- Exit asks only from explicit STC/closed/trimmed language — bare “Sold N contracts” is STO entry, not exit.
-- Social ≠ signal. No auto-trade. Never invent quotes.
+### v1.1 run order (CoS)
+`python3 src/history_peak.py && python3 src/hit_rate.py` — history overlay sets cite-time entry + 5-session peak; see RULES.md v1.1.
