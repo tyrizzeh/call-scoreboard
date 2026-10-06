@@ -1,1 +1,1 @@
-INLINED_REAL_CONTENT_OK
+file:///home/ubuntu/.cursor/projects/workspace/agent-tools/probe-content.txt
