@@ -1,1 +1,1 @@
-PLACEHOLDER
+$file:/tmp/gh-files/meta__README.md
