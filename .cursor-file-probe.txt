@@ -1,1 +1,1 @@
-$file:/tmp/tiny-test-content.txt
+INLINED_REAL_CONTENT_OK
